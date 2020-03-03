@@ -1,0 +1,30 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 26-02-2020, 22:27:54
+    Author     : Phan Thanh
+*/
+html, body{
+    margin: 0px;
+    background-color: #ededed;
+    padding: 0 55px;
+}
+.header
+{
+    width: 100%;
+    height: 105px;
+    background-image: url("../Image/nen_bg_1.png");
+    background-repeat: no-repeat;
+}
+.header-title
+{
+    width: 35%;
+    height: 58%;
+    background-image: url("../Image/banner_chu.svg");
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+
