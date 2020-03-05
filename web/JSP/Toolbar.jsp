@@ -18,7 +18,7 @@
                 TRANG CHỦ
                 <div class="wall"></div>
             </a>
-            <a href="http://localhost:8084/SocialInsurance/JSP/HomePage.jsp" target="_blank" id="sign_up" onclick="SignUp()">
+            <a href="http://localhost:8084/SocialInsurance1/HomePage" id="Signup">
                 ĐĂNG KÝ
                 <div class="wall"></div>
             </a>
@@ -42,7 +42,7 @@
                 THAY ĐỔI THÔNG TIN
                 <div class="wall"></div>
             </a>
-            <a id="Logout"> 
+            <a id="Logout" onclick="document.getElementById('id02').style.display='Block'"> 
                 ĐĂNG XUẤT
             </a>
             <%
@@ -52,6 +52,7 @@
                 document.getElementById("Changeinfo").style.display = "inline-flex";
                 document.getElementById("Logout").style.display = "inline-flex";
                 document.getElementById("Login").style.display = "None";
+                document.getElementById("Signup").style.display = "None";
             </script>
             <%
             } else {
@@ -60,6 +61,7 @@
                 document.getElementById("Changeinfo").style.display = "None";
                 document.getElementById("Logout").style.display = "None";
                 document.getElementById("Login").style.display = "inline-flex";
+                document.getElementById("Signup").style.display = "inline-flex";
             </script>
             <%
                 }

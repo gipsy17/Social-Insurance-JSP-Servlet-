@@ -9,15 +9,6 @@
         <servlet-name>Home-Page</servlet-name>
         <url-pattern>/HomePage</url-pattern>
     </servlet-mapping>
-    <!--Login-->
-    <servlet>
-        <servlet-name>Login-Form</servlet-name>
-        <servlet-class>Servlet.LoginFormServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Login-Form</servlet-name>
-        <url-pattern>/LoginForm</url-pattern>
-    </servlet-mapping>
     <!--User-->
     <servlet>
         <servlet-name>User</servlet-name>

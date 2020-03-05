@@ -39,13 +39,19 @@ public class UserServlet extends HttpServlet {
             session.setAttribute("error", "Tên đăng nhập hoặc mật khẩu không đúng!");
             session.setAttribute("Account", null);
             resp.sendRedirect("HomePage");
-        }
-        else
-        {
+        } else {
             session.setAttribute("error", "Tên đăng nhập hoặc mật khẩu không đúng!");
             session.setAttribute("Account", null);
             resp.sendRedirect("HomePage");
         }
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        HttpSession session = req.getSession();
+        session.setAttribute("error", null);
+        session.setAttribute("Account", null);
+        resp.sendRedirect("HomePage");
     }
 
     /**

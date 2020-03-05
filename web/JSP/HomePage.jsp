@@ -29,5 +29,7 @@
         <jsp:include page="Footer.jsp"></jsp:include>
         <!--LoginForm-->
         <jsp:include page="FormLogin.jsp"></jsp:include>
+        <!--SignOutForm-->
+        <jsp:include page="SignOutForm.jsp"></jsp:include>
     </body>
 </html>
