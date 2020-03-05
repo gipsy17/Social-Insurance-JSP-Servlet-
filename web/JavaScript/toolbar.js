@@ -6,5 +6,6 @@
 function showForm()
 {
     document.getElementById('id01').style.display = 'Block';
+    document.getElementById('alert').style.display = 'None';
 }
 

@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bảo hiểm xã hội Việt Nam</title>
-        <link href="../CSS/homepage.css" rel="stylesheet" type="text/css"/>
+        <link href="CSS/homepage.css" rel="stylesheet" type="text/css"/>
 
     </head>
     <body id="Body">
@@ -20,7 +20,7 @@
         <jsp:include page="Toolbar.jsp"></jsp:include>
             <!--Content-->
             <div class="content">
-                <img src="../Image/Home.jpg" alt="" style="width: 100%;height: 100%"class="image"/>
+                <img src="Image/Home.jpg" alt="" style="width: 100%;height: 100%"class="image"/>
                 <div class="overlay">
                     <div class="text">VÌ AN SINH XÃ HỘI</br>VÌ HẠNH PHÚC MỌI NGƯỜI</div>
                 </div>

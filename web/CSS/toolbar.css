@@ -40,4 +40,8 @@ a:hover
     height: 80%;
     background-color: #ffffff;
 }
+#Logout,#Changeinfo
+{
+    display: none;
+}
 
