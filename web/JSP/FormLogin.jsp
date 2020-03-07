@@ -25,13 +25,13 @@
 
                     <label for="psw"><b>Mật khẩu</b></label>
                     <input type="password" placeholder="Điền mật khẩu" name="password" required>
-                    <% if (session.getAttribute("error") != null) {
+                    <% if (session.getAttribute("errorlogin") != null) {
                     %>
                     
                     <div id="alert" style="color: red">
                         <%
-                            out.print(session.getAttribute("error"));
-                            session.setAttribute("error", null);
+                            out.print(session.getAttribute("errorlogin"));
+                            session.setAttribute("errorlogin", null);
                         %>
                     </div>
                     <script>
@@ -41,7 +41,7 @@
                         }
                     %>
 
-                    <button type="submit">Đăng nhập</button>
+                    <button type="submit" name="submit" value="login">Đăng nhập</button>
                     <label>
                         <input type="checkbox" checked="checked" name="remember"> Nhớ tôi cho lần sau
                     </label>

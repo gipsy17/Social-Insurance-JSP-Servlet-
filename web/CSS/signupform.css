@@ -4,11 +4,27 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 06-03-2020, 00:22:28
+    Created on : 06-03-2020, 01:50:16
     Author     : Admin
 */
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
 
 /* Set a style for all buttons */
 button {
@@ -18,6 +34,7 @@ button {
     margin: 8px 0;
     border: none;
     cursor: pointer;
+    width: 100%;
     opacity: 0.9;
 }
 
@@ -25,50 +42,45 @@ button:hover {
     opacity:1;
 }
 
-/* Float cancel and delete buttons and add an equal width */
-.cancelbtn-signout, .deletebtn {
+/* Extra styles for the cancel button */
+.cancelbtn-signup {
+    padding: 14px 20px;
+    background-color: #f44336;
+    color: #ffffff;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn-signup, .signupbtn {
     float: left;
     width: 50%;
 }
 
-/* Add a color to the cancel button */
-.cancelbtn-signout {
-    background-color: #ccc;
-    color: black;
-}
-
-/* Add a color to the delete button */
-.deletebtn {
-    background-color: #f44336;
-}
-
-/* Add padding and center-align text to the container */
-.container-signout {
+/* Add padding to container elements */
+.container-signup {
     padding: 16px;
-    text-align: center;
+    position: relative;
 }
 
 /* The Modal (background) */
-.modal-signout {
-    display: none;
-    position: absolute; /* Stay in place */
+.modal-signup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    padding-top: 100px;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 50px;
 }
 
 /* Modal Content/Box */
-.modal-content-signout {
+.modal-content-signup {
     background-color: #fefefe;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: 2px solid #888;
-    width: 45%; /* Could be more or less, depending on screen size */
+    border: 1px solid #888;
+    width: 60%; /* Could be more or less, depending on screen size */
 }
 
 /* Style the horizontal ruler */
@@ -77,11 +89,11 @@ hr {
     margin-bottom: 25px;
 }
 
-/* The Modal Close Button (x) */
+/* The Close Button (x) */
 .close {
     position: absolute;
-    right: 35px;
-    top: 15px;
+    right: 20px;
+    top: 35px;
     font-size: 40px;
     font-weight: bold;
     color: #f1f1f1;
@@ -99,10 +111,17 @@ hr {
     clear: both;
     display: table;
 }
-
-/* Change styles for cancel button and delete button on extra small screens */
+.modal-signup p
+{
+    color: #000;
+}
+.modal-signup a:hover
+{
+    background-color: #ffffff;
+}
+/* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
-    .cancelbtn-signout, .deletebtn {
+    .cancelbtn-signup, .signupbtn {
         width: 100%;
     }
 }

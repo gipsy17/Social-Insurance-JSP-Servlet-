@@ -18,11 +18,11 @@
                 TRANG CHỦ
                 <div class="wall"></div>
             </a>
-            <a href="http://localhost:8084/SocialInsurance1/HomePage" id="Signup">
+            <a id="Signup" onclick="showForm('id03')">
                 ĐĂNG KÝ
                 <div class="wall"></div>
             </a>
-            <a id="Login" onclick="showForm()">
+            <a id="Login" onclick="showForm('id01')">
                 ĐĂNG NHẬP
                 <div class="wall"></div>
             </a>
@@ -34,15 +34,15 @@
                 TIN TỨC
                 <div class="wall"></div>
             </a>
-            <a href="http://localhost:8084/SocialInsurance1/HomePage">
+            <a href="https://jobsgo.vn/blog/bao-hiem-xa-hoi-la-gi-nhung-dieu-can-biet-ve-bao-hiem-xa-hoi/">
                 HỎI ĐÁP
                 <div class="wall"></div>
             </a>
-            <a id="Changeinfo"> 
-                THAY ĐỔI THÔNG TIN
+            <a id="Changeinfo" onclick="showForm('id04')"> 
+                KHAI BÁO THÔNG TIN
                 <div class="wall"></div>
             </a>
-            <a id="Logout" onclick="document.getElementById('id02').style.display='Block'"> 
+            <a id="Logout" onclick="showForm('id02')"> 
                 ĐĂNG XUẤT
             </a>
             <%

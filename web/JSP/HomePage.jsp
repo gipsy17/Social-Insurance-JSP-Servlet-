@@ -31,5 +31,9 @@
         <jsp:include page="FormLogin.jsp"></jsp:include>
         <!--SignOutForm-->
         <jsp:include page="SignOutForm.jsp"></jsp:include>
+        <!--SignUpForm-->
+        <jsp:include page="SignUpForm.jsp"></jsp:include>
+        <!--ChangeInfoForm-->
+        <jsp:include page="InfoForm.jsp"></jsp:include>
     </body>
 </html>
