@@ -4,6 +4,8 @@
     Author     : Admin
 --%>
 
+<%@page import="Common.Validate"%>
+<%@page import="Model.User"%>
 <%@page import="Model.Account"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -42,11 +44,20 @@
                 KHAI BÁO THÔNG TIN
                 <div class="wall"></div>
             </a>
+            <a id="Insurance1" onclick="showForm('id04')"> 
+                ĐÓNG BẢO HIỂM
+                <div class="wall"></div>
+            </a>
+            <a id="Insurance2" href="http://localhost:8084/SocialInsurance1/Insurance"> 
+                ĐÓNG BẢO HIỂM
+                <div class="wall"></div>
+            </a>
             <a id="Logout" onclick="showForm('id02')"> 
                 ĐĂNG XUẤT
             </a>
             <%
                 if (session.getAttribute("Account") != null) {
+                User u = (User)session.getAttribute("User");
             %> 
             <script>
                 document.getElementById("Changeinfo").style.display = "inline-flex";
@@ -55,14 +66,31 @@
                 document.getElementById("Signup").style.display = "None";
             </script>
             <%
+                    if (!Validate.checkUser(u)) {
+                    %>
+                    <script>
+                        document.getElementById('Insurance1').style.display = 'Inline-flex'
+                        document.getElementById('Insurance2').style.display = 'None'
+                    </script>
+                    <%}else{%>
+                     <script>
+                        document.getElementById('Insurance2').style.display = 'Inline-flex'
+                        document.getElementById('Insurance1').style.display = 'None'
+                    </script>
+                    <%}%>
+            <%
             } else {
             %>
             <script>
                 document.getElementById("Changeinfo").style.display = "None";
                 document.getElementById("Logout").style.display = "None";
+                document.getElementById("Insurance1").style.display = "None";
+                document.getElementById("Insurance2").style.display = "None";
                 document.getElementById("Login").style.display = "inline-flex";
                 document.getElementById("Signup").style.display = "inline-flex";
+                
             </script>
+
             <%
                 }
             %>

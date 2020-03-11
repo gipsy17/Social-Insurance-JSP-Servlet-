@@ -5,6 +5,7 @@
 --%>
 
 <%@page import="Model.*"%>
+<%@page import="Common.Validate"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -19,7 +20,7 @@
                     <span onclick="document.getElementById('id04').style.display = 'none'" class="close" title="Close Modal">&times;</span>
 
                     <h1>Thông tin của bạn</h1>
-                    <p>Điền đầy đủ thông tin bên dưới để đóng bảo hiểm</p>
+                    <p id="title-insurance">Thông tin của bạn chưa đầy đủ, điền đầy đủ thông tin để đóng bảo hiểm</p>
                     <hr>
                     <h2>Thông tin cá nhân</h2>
                     <%
@@ -30,8 +31,9 @@
                         String mainsalary = "";
                         String jobsalary = "";
                         String responsalary = "";
+                        User u = new User();
                         if (session.getAttribute("User") != null) {
-                            User u = (User) session.getAttribute("User");
+                            u = (User) session.getAttribute("User");
                             if(u.getName()!=null)    name = u.getName();
                             if(u.getAddress()!=null)    address = u.getAddress();
                             if(u.getPhonenumber()!=null)    phonenumber = u.getPhonenumber();
@@ -43,12 +45,18 @@
                         }
                     %>
                     <%
+                        if (!Validate.checkUser(u)) {
+                    %>
+                    <script>
+                        document.getElementById('title-insurance').style.display = 'block'
+                    </script>
+                    <%}%>
+                    <%
                         if (session.getAttribute("errorinfo") != null) {
                     %>
                     <div id="alert" style="color: red">
                         <%
                             out.print(session.getAttribute("errorinfo"));
-                            String s = "fwefwe";
                             session.setAttribute("errorinfo", null);
                         %>
                     </div>

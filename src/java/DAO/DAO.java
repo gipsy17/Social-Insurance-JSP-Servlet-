@@ -13,19 +13,21 @@ import java.sql.DriverManager;
  * @author Admin
  */
 public class DAO {
+
     public static Connection con;
 
     public DAO() {
     }
-    public static void getInstance()
-    {
-        if(con==null)
-        {
-            String dburl = "jdbc:mysql://localhost:3306/Insurance?useSSL=false";
-            String dbDriver = "com.mysql.jdbc.Driver";
+
+    public static void getInstance() {
+        if (con == null) {
+//            String dburl = "jdbc:mysql://localhost:3306/Insurance?useSSL=false";
+//            String dbDriver = "com.mysql.jdbc.Driver";
+            String dburl = "jdbc:sqlserver://localhost:1433;databaseName=Insurance";
+            String dbDriver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
             try {
                 Class.forName(dbDriver);
-                con = DriverManager.getConnection(dburl, "root", "12345678");
+                con = DriverManager.getConnection(dburl, "sa", "12345678");
                 System.out.println("thanh cong");
             } catch (Exception e) {
                 e.printStackTrace();
@@ -33,6 +35,7 @@ public class DAO {
             }
         }
     }
+
     public static void main(String[] args) {
         getInstance();
     }

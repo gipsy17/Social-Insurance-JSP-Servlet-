@@ -19,15 +19,6 @@
 
                     <h1>Đăng ký tài khoản</h1>
                     <p>Điền đầy đủ thông tin bên dưới để đăng ký tài khoản.</p>
-                    <hr>
-                    <label for="accountname"><b>Tên đăng nhập</b></label>
-                    <input type="text" placeholder="Nhập tên đăng nhập" name="username" required>
-
-                    <label for="psw"><b>Mật khẩu</b></label>
-                    <input type="password" placeholder="Nhập mật khẩu" name="password" required>
-
-                    <label for="psw-repeat"><b>Nhập lại mật khẩu</b></label>
-                    <input type="password" placeholder="Nhập lại mật khẩu" name="passwordrepeat" required>
                     <% if (session.getAttribute("errorsignup") != null) {
                     %>
 
@@ -43,6 +34,15 @@
                     <%
                         }
                     %>
+                    <hr>
+                    <label for="accountname"><b>Tên đăng nhập</b></label>
+                    <input type="text" placeholder="Nhập tên đăng nhập" name="username" required>
+
+                    <label for="psw"><b>Mật khẩu</b></label>
+                    <input type="password" placeholder="Nhập mật khẩu" name="password" required>
+
+                    <label for="psw-repeat"><b>Nhập lại mật khẩu</b></label>
+                    <input type="password" placeholder="Nhập lại mật khẩu" name="passwordrepeat" required>
                     <label>
                         <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
                     </label>

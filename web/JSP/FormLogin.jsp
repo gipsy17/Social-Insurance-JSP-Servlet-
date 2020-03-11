@@ -28,7 +28,7 @@
                     <% if (session.getAttribute("errorlogin") != null) {
                     %>
                     
-                    <div id="alert" style="color: red">
+                    <div style="color: red">
                         <%
                             out.print(session.getAttribute("errorlogin"));
                             session.setAttribute("errorlogin", null);

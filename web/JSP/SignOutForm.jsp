@@ -20,7 +20,7 @@
 
                     <div class="clearfix">
                         <button type="button" onclick="document.getElementById('id02').style.display = 'none'" class="cancelbtn-signout">Hủy</button>
-                        <button type="submit" onclick="document.getElementById('id02').style.display = 'none'" class="deletebtn" name="submit">Đăng xuất</button>
+                        <button type="submit" onclick="document.getElementById('id02').style.display = 'none'" class="deletebtn" name="submit" value="Logout">Đăng xuất</button>
                     </div>
                 </div>
             </form>

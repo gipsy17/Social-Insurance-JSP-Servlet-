@@ -1,0 +1,30 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+td, th {
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 8px;
+  height: 80px;
+}
+td, th:hover
+{
+    cursor: pointer;
+}
+#userInfo
+{
+    color: black;
+    background-color: #ffffff;
+}
+#columName
+{
+    background-color: #009ee3
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

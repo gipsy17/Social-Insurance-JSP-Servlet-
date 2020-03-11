@@ -18,4 +18,13 @@
         <servlet-name>User</servlet-name>
         <url-pattern>/User</url-pattern>
     </servlet-mapping>
+    <!--Insurance-->
+    <servlet>
+        <servlet-name>Insurance</servlet-name>
+        <servlet-class>Servlet.InsuranceServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Insurance</servlet-name>
+        <url-pattern>/Insurance</url-pattern>
+    </servlet-mapping>
 </web-app>

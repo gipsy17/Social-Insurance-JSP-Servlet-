@@ -6,7 +6,7 @@
 function showForm(para)
 {
     document.getElementById(para).style.display = 'Block';
-    document.getElementById('alert').style.display = 'None';
+    //document.getElementById('alert').style.display = 'None';
 
 }
 window.onclick = function (event) {

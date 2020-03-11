@@ -18,6 +18,7 @@ import javax.servlet.http.HttpSession;
 import Common.*;
 import Model.Salary;
 import Model.User;
+import java.nio.charset.Charset;
 
 /**
  *
@@ -33,6 +34,7 @@ public class UserServlet extends HttpServlet {
         String pass = req.getParameter("password");
         String name = req.getParameter("name");
         String address = req.getParameter("address");
+        System.out.println(address);
         String phonenumber = req.getParameter("phonenumber");
         String insurancenumber = req.getParameter("insurancenumber");
         AccountDAO accountDao = new AccountDAO();
@@ -76,6 +78,13 @@ public class UserServlet extends HttpServlet {
             }
 
         } else if (typeSubmit.equals("confirm")) {
+            Account a = (Account) session.getAttribute("Account");
+//            String text = req.getParameter("address");
+//            byte[] byteText = text.getBytes(Charset.forName("UTF-16"));
+//            String address = new String(byteText, "UTF-16");
+            //User u = new User(a, name, address, phonenumber, insurancenumber, null, new Salary(0, 0, 0), 0);
+            //session.setAttribute("User", u);
+            //session.setAttribute("Account", a);
             if (!Validate.checkName(name)) {
                 session.setAttribute("errorinfo", "Tên không được chứa kí tự đặc biệt và số");
                 resp.sendRedirect("HomePage");
@@ -98,11 +107,9 @@ public class UserServlet extends HttpServlet {
             int jobsalary = Integer.parseInt(req.getParameter("jobsalary"));
             int responsalary = Integer.parseInt(req.getParameter("responsalary"));
             Salary s = new Salary(mainsalary, jobsalary, responsalary);
-            Account a = (Account) session.getAttribute("Account");
             User u = new User(a, name, address, phonenumber, insurancenumber, null, s, 0);
             userDao.deleteUser(a);
             userDao.addUser(u);
-            session.setAttribute("Account", a);
             session.setAttribute("User", u);
             resp.sendRedirect("HomePage");
         }
@@ -112,10 +119,21 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        session.setAttribute("error", null);
-        session.setAttribute("Account", null);
-        session.setAttribute("User", null);
-        resp.sendRedirect("HomePage");
+        String typeSubmit = req.getParameter("submit");
+        if (typeSubmit.equals("Logout")) {
+            session.setAttribute("error", null);
+            session.setAttribute("Account", null);
+            session.setAttribute("User", null);
+            resp.sendRedirect("HomePage");
+        } else {
+            UserDAO userDao = new UserDAO();
+            Account a = (Account) session.getAttribute("Account");
+            userDao.updateUser(a);
+            User u = userDao.getUser(a);
+            session.setAttribute("User", u);
+            resp.sendRedirect("Insurance");
+        }
+        
     }
 
     /**

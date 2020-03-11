@@ -5,6 +5,10 @@
  */
 package Common;
 
+import Model.User;
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
+
 /**
  *
  * @author Admin
@@ -62,21 +66,34 @@ public class Validate {
         }
         return true;
     }
-    public static boolean checkAddress(String address)
-    {
+
+    public static boolean checkAddress(String address) {
         byte[] address_custom = address.getBytes();
         for (int i = 0; i < address_custom.length; i++) {
-            if ((address_custom[i] >= 48
-                    && address_custom[i] <= 57)||
-                    (address_custom[i] >= 65
-                    && address_custom[i] <= 90)||
-                    (address_custom[i] >= 97
-                    && address_custom[i] <= 122)||
-                    (address_custom[i] == 32)) {
-            } else {
+            if ((address_custom[i] >= 33
+                    && address_custom[i] <= 43)) {
+//                    (address_custom[i] >= 46
+//                    && address_custom[i] <= 47)||
+//                    (address_custom[i] >= 58
+//                    && address_custom[i] <= 64)||
+//                    (address_custom[i] >= 91 && address_custom[i]<=96)
+//                    ||(address_custom[i] >= 123 && address_custom[i]<=126)) {
                 return false;
             }
         }
         return true;
+    }
+
+    public static boolean checkUser(User u) {
+        return !(u.getAddress() == null || u.getInsurancenumber() == null || u.getName() == null || u.getPhonenumber() == null
+                || u.getS().getMainsalary() == 0);
+    }
+
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        String text = "This is an example hà nội";
+//        byte[] byteText = text.getBytes(Charset.forName("UTF-16"));
+//        //To get original string from byte.
+//        String originalString = new String(byteText, "UTF-16");
+        System.out.println(text);
     }
 }

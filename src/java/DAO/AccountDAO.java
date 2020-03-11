@@ -23,7 +23,8 @@ public class AccountDAO extends DAO {
 
     public Account getAccount(String username, String password) {
         Account a = null;
-        String sql = "Select * from user where Username=\"" + username + "\" and password=\"" + password + "\"";
+        //String sql = "Select * from user where Username=\"" + username + "\" and password=\"" + password + "\"";
+        String sql = "Select * from Customer where Username='" + username + "' and password='" + password + "'";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
@@ -39,7 +40,8 @@ public class AccountDAO extends DAO {
     }
 
     public boolean checkAccount(String user) {
-        String sql = "Select * from user where Username=\"" + user + "\"";
+        //String sql = "Select * from user where Username=\"" + user + "\"";
+        String sql = "Select * from Customer where Username='" + user + "'";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
@@ -59,8 +61,11 @@ public class AccountDAO extends DAO {
         if (checkAccount(user) || Validate.checkUsername(user)==false || Validate.checkPassword(pass)==false) {
             return false;
         }
-        String sql = "insert into insurance.user(Username, Password)\n"
+//        String sql = "insert into insurance.user(Username, Password)\n"
+//                + "values ('" + user + "','" + pass + "');";
+        String sql = "insert into Customer(Username, Password)\n"
                 + "values ('" + user + "','" + pass + "');";
+        System.out.println(sql);
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.executeUpdate();
@@ -72,6 +77,6 @@ public class AccountDAO extends DAO {
 
     public static void main(String[] args) {
         AccountDAO ad = new AccountDAO();
-        System.out.println(ad.addAccount("@!@", "12345"));
+        Account a = ad.getAccount("a", "111");
     }
 }
